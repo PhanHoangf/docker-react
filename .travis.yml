@@ -8,3 +8,12 @@ before_install:
 
 script:
   - docker run -e CI=true phanhoang/docker-react npm run test
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 306d1bb9-be8d-4acc-9435-7a7bc9317682
+  app: react-docker-phanhoang
+  on:
+    repo: PhanHoangf/docker-react
+  
