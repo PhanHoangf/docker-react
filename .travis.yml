@@ -1,19 +1,15 @@
-language: generic 
+language: generic
 sudo: required
-services: 
-  - docker
-
+services:
+- docker
 before_install:
-  - docker build -t phanhoang/docker-react -f Dockerfile.dev .
-
+- docker build -t phanhoang/docker-react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true phanhoang/docker-react npm run test
-
+- docker run -e CI=true phanhoang/docker-react npm run test
 deploy:
   provider: heroku
   api_key:
-    secure: 306d1bb9-be8d-4acc-9435-7a7bc9317682
+    secure: rPv+ZQhTsgg1odK8k3ot9LvvnhTLOd49ldzJcQdtxcCBNLa1eU0egwMyYA6K89P2m+MvH8yKU9/mddkM2RmjaKVivEwiW+R/bPjBwTTAan9ZXa7nFMlAam+icppBnSbqVGcqAfJoUAh4R+dYaG3rNOrgnVcAVAbHguy+LERYdYfhtE3PRq9/2Vw/L1CHDq/FiVbrTcU6YWH9m5H1tyTk7Xxq8wZ97pOR61FhBa0CPPgrs4BWOjJ6pxFvvCXLBHbdr/x5RblKhxXhQO9Wis6Ayp4YCvM6CKK1c69za3fY1BD3tZHzD9FsS1nEGOGqeIZzk8h89YX0ruLVqqH6ZOTYcuX6nEXS2+y/LuRQSujKU173FTUxCwY9yZuOfx0c9ypSQe5c11XivVtdLB4OV/vlkVrnP6PDOa2lxyzi6xbAF9i9fOZT6jlSnyIqPpbuciDlrOOf1h560Y7MXEyiPkJ7ogbOu2Of+GN1+pYBXGcoeBbruS9eFpqH8p6T899KBr2RfWkc9zjMFe0qdCvPrnXhnO2P1MxfhVrV+9o9e2hBsZvhF4nI38hVJTXY5szygQ4Ba9xh3WTZ0KQvtWGd5RZ9CB3o9OqIyVtN6sxPQlHW3MxhSnkEaR0ZYelpnODP16mCltUUETxSYlU/zGZhOL+792OV10Ujckt+klvGmtgZwkQ=
   app: react-docker-phanhoang
   on:
     branch: master
-  
