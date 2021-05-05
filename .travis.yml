@@ -15,5 +15,5 @@ deploy:
     secure: 306d1bb9-be8d-4acc-9435-7a7bc9317682
   app: react-docker-phanhoang
   on:
-    repo: PhanHoangf/docker-react
+    branch: master
   
